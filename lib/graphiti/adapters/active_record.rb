@@ -272,7 +272,7 @@ module Graphiti
       # @see Adapters::Abstract#disassociate
       def disassociate(parent, child, association_name, association_type)
         if association_type == :many_to_many
-          parent.send(association_name).delete(child)
+          parent.send(association_name).destroy(child)
         end
         # Nothing to do in the else case, happened when we merged foreign key
       end
